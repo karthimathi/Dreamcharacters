@@ -1,1 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-background text-white overflow-x-hidden;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-background/50;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neonPurple rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-electricBlue;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl;
+  }
+  
+  .neon-text {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+  }
+  
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(90deg, #7c3aed, #06b6d4, #ec4899, #7c3aed);
+    background-size: 200% 100%;
+    animation: borderFlow 3s linear infinite;
+  }
+}
